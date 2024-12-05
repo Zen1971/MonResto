@@ -1,0 +1,190 @@
+
+/* margin et padding sur tout les éléments du projet */
+*{
+    margin: 0;
+    padding: 0; 
+}
+/* Quand on click sur le menu = descente douce */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(203, 202, 202);
+    /* réduit l'écartement entre les lignes */
+ }
+header{
+    background-color: rgb(203, 202, 202);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.title-box{
+    /* background-color: white; */
+    position: absolute;
+    /* positionnement du titre passe devant slider*/
+    z-index: 999;
+    padding: 50px;
+    top:120px
+}
+header h1{
+    font-size: 80px;
+    text-align: center;
+}
+header p{
+    font-size: 25px;
+    text-align: center;
+}
+header h1, header p, li{
+        font-family: "Kenia", cursive;
+}
+/* Slider d'images */
+.slider{
+    overflow: hidden;
+}
+.slides{
+display: flex;
+align-items: center;
+flex-direction: row;
+width: calc(500px*4);
+height: 720px;
+opacity: 0.5;
+/* répètre l'animation de glisse à l'infini */
+animation: glisse 15s infinite ease;
+}
+/* animation des images */
+@keyframes glisse{
+    0%{
+       transform: translatex(0); 
+    }
+    10%{
+        transform: translatex(0); 
+     }
+    33%{
+        transform: translatex(-500px); 
+     }
+     66%{
+        transform: translatex(-500px); 
+     }
+     100%{
+        transform: translatex(0); 
+     }
+}
+/* menu de navigation */
+.section-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-30px);
+    flex-direction: row;
+}
+nav.menu{
+    width: calc(500px*4);
+    margin: auto;
+    transform: translateY(-10px);
+}
+nav.menu ul{
+    display: flex;
+    /* flex-direction: column; */
+}
+nav.menu ul li{
+list-style-type: none;
+display: flex;
+align-items: center;
+justify-content: center;
+/* margin: 5px; */
+transition: 0.3s all;
+}
+/* Effet de style avec la souris */
+nav.menu ul li:hover{
+    transform: scale(0.93);
+    transition: 0.3s all;
+}
+nav.menu ul li a{
+color: white;
+font-size: 50px;
+text-decoration: none;
+}
+.nav-item{
+    flex: 1;
+    height: 300px;
+}
+.pizza{
+background: url("../Images/pizza-banner.jpg") 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.salade{
+background: url("../Images/salad-banner.jpg") 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.burger{
+background: url("../Images/burger-banner.jpg") 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.boisson{
+background: url("../Images/boisson-banner.jpg") 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+/* sections des plats */
+.item{
+background-color: rgb(204, 203, 203);
+margin: 30px;
+display: flex;
+cursor: pointer;
+width: 50%;
+}
+.item:hover{
+    transform: scale(1.1);
+    transition: 0.3s all;
+}
+.item-infos{
+    padding: 20px;
+    line-height: 40px;
+}
+section{
+    padding: 80px;
+    font-family: 'Martel', serif;
+}
+.item-infos h3{
+    font-size: 30px;
+}
+.item-infos hr{
+margin: 10px 0 10px 0;
+opacity: 0.5;
+}
+p.prix{
+    font-weight: bold;
+    font-size: 22px;
+}
+section img{
+   width: 300px;
+}
+/* menu bloqué à droite quand scroll */
+.sticky{
+    position: fixed;
+    width: 400px;
+    right: 50px;
+    top: 20vh;
+    transition: 0.6s all;
+    transform: translateY(10px);
+}
+.sticky + #main{
+    padding-top: 300px;
+}
+.sticky nav.menu ul{
+    flex-direction: column;
+}
+.sticky nav.menu ul li{
+    margin: 5px;
+}
+footer p{
+font-size: 22px;
+text-align: center;
+color: white;
+font-family: 'Martel', serif;
+padding: 5px;
+}
