@@ -85,14 +85,12 @@ nav.menu{
 }
 nav.menu ul{
     display: flex;
-    /* flex-direction: column; */
 }
 nav.menu ul li{
 list-style-type: none;
 display: flex;
 align-items: center;
 justify-content: center;
-/* margin: 5px; */
 transition: 0.3s all;
 }
 /* Effet de style avec la souris */
